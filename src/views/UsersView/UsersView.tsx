@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button,
-  Container,
-  Flex,
-  HStack,
-  VStack,
-  Text,
-} from '@chakra-ui/react';
+import { Button, Container, Flex, Text } from '@chakra-ui/react';
 import { useAxios } from 'utils/useAxios';
 import { getUsers } from 'services/UserService';
 import { User } from 'components/User';
@@ -42,20 +35,20 @@ export const UsersView = () => {
     }
 
     return (
-      <VStack>
+      <Flex flexDirection="column">
         {users.map((user: any) => (
-          <Flex key={user.id} onClick={() => {}}>
+          <Flex key={user.id} m="10px">
             <User {...user}>
-              <VStack>
+              <Flex gap="1">
                 <Button onClick={() => navigateProfile(user.id)}>
                   Show full profile
                 </Button>
                 <Button onClick={navigateUserPosts}>User posts</Button>
-              </VStack>
+              </Flex>
             </User>
           </Flex>
         ))}
-      </VStack>
+      </Flex>
     );
   };
 
@@ -70,14 +63,14 @@ export const UsersView = () => {
   };
 
   return (
-    <Container>
+    <Container width="100%">
       <UsersList users={users} />
-      <HStack justifyContent="center">
+      <Flex justifyContent="center">
         <Button onClick={handleBack} disabled={page === 0}>
           Back
         </Button>
         <Button onClick={handleNext}>Next</Button>
-      </HStack>
+      </Flex>
     </Container>
   );
 };

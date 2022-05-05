@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Container, Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
 import { User } from 'components/User';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAxios } from 'utils/useAxios';
@@ -9,7 +9,7 @@ import { UserProfile } from 'services/UserService.d';
 export const UserDetailsView = () => {
   const navigate = useNavigate();
   const { userid = '' } = useParams();
-  const { response, loading }: any = useAxios(getUserProfile(userid));
+  const { response, loading, error }: any = useAxios(getUserProfile(userid));
   const [user, setUser] = useState<UserProfile>();
 
   const handleBack = () => {
@@ -17,10 +17,12 @@ export const UserDetailsView = () => {
   };
 
   useEffect(() => {
-    if (response) {
-      setUser(response);
-    }
+    if (response) setUser(response);
   }, [response]);
+
+  useEffect(() => {
+    if (error) navigate('/page/not/found');
+  }, [error]);
 
   const Details = () => {
     if (loading || !user) {
@@ -33,11 +35,11 @@ export const UserDetailsView = () => {
 
     return (
       <User {...user}>
-        <VStack alignItems="flex-start">
+        <Flex flexDirection="column" alignItems="flex-start">
           <Box>Email: {user.email}</Box>
           <Box>Gender: {user.gender}</Box>
           <Box>Phone: {user.phone}</Box>
-        </VStack>
+        </Flex>
       </User>
     );
   };
