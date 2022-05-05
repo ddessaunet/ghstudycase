@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Box } from '@chakra-ui/react';
-import { POSTS, USERDETAILS, USERS } from './routes';
+import { POSTS, PROFILE, USERS } from './routes';
 import { UsersView } from 'views/UsersView/Loadable';
 import { PostsView } from 'views/PostsView/Loadable';
 import { UnexpectedErrorView, NotFoundView } from 'views/ErrorsView/Loadable';
@@ -14,11 +14,8 @@ const SiteRouting = () => (
         <ErrorBoundary FallbackComponent={UnexpectedErrorView}>
           <Routes>
             <Route path={USERS.path} element={<UsersView />} />
+            <Route path={PROFILE.path} element={<UserDetailsView />} />
             <Route path={POSTS.path} element={<PostsView />} />
-            <Route
-              path={`${USERDETAILS.path}/:userid`}
-              element={<UserDetailsView />}
-            />
             <Route path="*" element={<NotFoundView />} />
           </Routes>
         </ErrorBoundary>

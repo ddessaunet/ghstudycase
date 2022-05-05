@@ -3,12 +3,12 @@ export const USERS = {
   path: '/',
 };
 
-export const USERDETAILS = {
-  key: 'userdetails',
-  path: '/',
+export const PROFILE = {
+  key: 'user-details',
+  path: '/:userid',
 };
 
 export const POSTS = {
   key: 'posts',
-  path: '/posts',
+  path: '/:userid/posts',
 };
