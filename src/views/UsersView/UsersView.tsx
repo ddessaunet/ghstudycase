@@ -53,24 +53,31 @@ export const UsersView = () => {
   };
 
   const handleBack = () => {
+    window.scrollTo(0, 0);
     page = page - 1;
     setUsers([]);
   };
 
   const handleNext = () => {
+    window.scrollTo(0, 0);
     page = page + 1;
     setUsers([]);
   };
 
+  const NavigationButtons = () => (
+    <Flex justifyContent="center">
+      <Button onClick={handleBack} disabled={page === 0}>
+        Back
+      </Button>
+      <Button onClick={handleNext}>Next</Button>
+    </Flex>
+  );
+
   return (
     <Container width="100%">
+      <NavigationButtons />
       <UsersList users={users} />
-      <Flex justifyContent="center">
-        <Button onClick={handleBack} disabled={page === 0}>
-          Back
-        </Button>
-        <Button onClick={handleNext}>Next</Button>
-      </Flex>
+      {!!users.length && <NavigationButtons />}
     </Container>
   );
 };
