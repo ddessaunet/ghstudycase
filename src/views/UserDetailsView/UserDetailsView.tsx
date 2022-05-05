@@ -34,20 +34,22 @@ export const UserDetailsView = () => {
     }
 
     return (
-      <User {...user}>
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Box>Email: {user.email}</Box>
-          <Box>Gender: {user.gender}</Box>
-          <Box>Phone: {user.phone}</Box>
-        </Flex>
-      </User>
+      <>
+        <User {...user}>
+          <Flex flexDirection="column" alignItems="flex-start">
+            <Box>Email: {user.email}</Box>
+            <Box>Gender: {user.gender}</Box>
+            <Box>Phone: {user.phone}</Box>
+          </Flex>
+        </User>
+        <Button onClick={handleBack}>Back to users list</Button>
+      </>
     );
   };
 
   return (
     <Container>
       <Details />
-      <Button onClick={handleBack}>Back to users list</Button>
     </Container>
   );
 };

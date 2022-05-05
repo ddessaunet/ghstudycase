@@ -9,7 +9,7 @@ export const User = ({
   picture,
   children,
 }: Props) => (
-  <Container borderColor="blue" border="solid" borderWidth="5px" padding="10px">
+  <Container border="solid" borderWidth="5px" padding="10px">
     <Flex>
       <Flex marginX="10px">
         <Img src={picture} alt="" w="150px" />

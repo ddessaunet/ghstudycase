@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Props } from './Paginated.d';
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { useAxios } from 'utils/useAxios';
 
 let page = 0;
@@ -54,10 +54,10 @@ export const Paginated = ({
   );
 
   return (
-    <>
+    <Box marginY="10px">
       <NavigationButtons />
       <List />
       {!!elements.length && <NavigationButtons />}
-    </>
+    </Box>
   );
 };

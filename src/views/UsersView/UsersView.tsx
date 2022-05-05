@@ -4,10 +4,11 @@ import { getUsers } from 'services/UserService';
 import { User } from 'components/User';
 import { Paginated } from 'components/Paginated';
 import { useNavigate } from 'react-router-dom';
+import { User as IUser } from 'services/UserService.d';
 
 export const UsersView = () => {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<IUser[]>([]);
 
   const nav = (path: string) => {
     window.scrollTo(0, 0);
