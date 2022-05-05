@@ -1,2 +1,2 @@
-export { default as UnexpectedErrorView } from './UnexpectedErrorView';
-export { default as NotFoundView } from './NotFoundView';
+export { UnexpectedErrorView } from './UnexpectedErrorView';
+export { NotFoundView } from './NotFoundView';

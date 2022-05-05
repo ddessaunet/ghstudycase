@@ -1,1 +1,1 @@
-export { default as PostsView } from './PostsView';
+export { PostsView } from './PostsView';
