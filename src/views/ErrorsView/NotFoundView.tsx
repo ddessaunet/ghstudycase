@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 export const NotFoundView = () => {
   const navigate = useNavigate();
-  const navigateBack = () => navigate('/');
+  const navigateBack = () => {
+    window.scrollTo(0, 0);
+    navigate('/');
+  };
   return (
     <ErrorPlaceholder>
       <Box textColor="yellow">Page Not Found</Box>
