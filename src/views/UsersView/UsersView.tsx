@@ -1,34 +1,68 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Flex, VStack } from '@chakra-ui/react';
+import {
+  Button,
+  Container,
+  Flex,
+  HStack,
+  VStack,
+  Text,
+} from '@chakra-ui/react';
 import { useAxios } from 'utils/useAxios';
 import { getUsers } from 'services/UserService';
 import { User } from 'components/User';
 
+let page = 0;
+
 const UsersView = () => {
-  const { response, loading, error }: any = useAxios(getUsers(10));
+  const { response, loading, error }: any = useAxios(getUsers(5, page));
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    if (response !== null) {
+    if (response) {
       const { data: users } = response;
       setUsers(users);
     }
   }, [response]);
 
-  const UsersList = ({ users }: any) => (
-    <VStack>
-      {users.map((user: any) => (
-        <Flex key={user.id} onClick={() => {}}>
-          <User {...user} />
+  const UsersList = ({ users }: any) => {
+    if (loading || !users.length) {
+      return (
+        <Flex justifyContent="center" m="20px">
+          <Text>Loading...</Text>
         </Flex>
-      ))}
-    </VStack>
-  );
+      );
+    }
+
+    return (
+      <VStack>
+        {users.map((user: any) => (
+          <Flex key={user.id} onClick={() => {}}>
+            <User {...user} />
+          </Flex>
+        ))}
+      </VStack>
+    );
+  };
+
+  const handleBack = () => {
+    page = page - 1;
+    setUsers([]);
+  };
+
+  const handleNext = () => {
+    page = page + 1;
+    setUsers([]);
+  };
 
   return (
     <Container>
-      <Flex justifyContent="center">Users list</Flex>
-      {loading ? 'Loading...' : <UsersList users={users} />}
+      <UsersList users={users} />
+      <HStack justifyContent="center">
+        <Button onClick={handleBack} disabled={page === 0}>
+          Back
+        </Button>
+        <Button onClick={handleNext}>Next</Button>
+      </HStack>
     </Container>
   );
 };

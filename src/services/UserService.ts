@@ -1,6 +1,6 @@
-import { AxiosParams } from 'utils/useAxios';
+import { AxiosRequestConfig } from 'axios';
 
-export const getUsers = (limit: number): AxiosParams => ({
-  url: `/user?limit=${limit}`,
+export const getUsers = (limit: number, page: number): AxiosRequestConfig => ({
+  url: `/user?limit=${limit}&page=${page}`,
   method: 'get',
 });
