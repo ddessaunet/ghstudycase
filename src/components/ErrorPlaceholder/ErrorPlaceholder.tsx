@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'assets/logo.svg';
+import logo from 'assets/gh.png';
 import './styles.css';
 
 const ErrorPlaceholder = ({ children }: any) => {
