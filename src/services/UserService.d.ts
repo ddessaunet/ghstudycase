@@ -12,3 +12,18 @@ export interface User {
   lastName: string;
   picture: string;
 }
+
+export interface UserProfile {
+  dateOfBirth: string;
+  email: string;
+  firstName: string;
+  gender: string;
+  id: string;
+  lastName: string;
+  location: any;
+  phone: string;
+  picture: string;
+  registerDate: string;
+  title: string;
+  updatedDate: string;
+}

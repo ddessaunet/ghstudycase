@@ -1,16 +1,14 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  HStack,
-  Img,
-  VStack,
-} from '@chakra-ui/react';
-import { UserProps } from './index';
+import { Box, Container, Flex, HStack, Img, VStack } from '@chakra-ui/react';
+import { Props } from './User.d';
 
-const User = ({ title, id, firstName, lastName, picture }: UserProps) => (
+export const User = ({
+  title,
+  firstName,
+  lastName,
+  picture,
+  children,
+}: Props) => (
   <Container borderColor="blue" border="solid" borderWidth="5px">
     <HStack>
       <Flex>
@@ -22,13 +20,8 @@ const User = ({ title, id, firstName, lastName, picture }: UserProps) => (
           <Box>Name: {firstName}</Box>
           <Box>Lastname: {lastName}</Box>
         </VStack>
-        <VStack>
-          <Button>Show full profile</Button>
-          <Button>User posts</Button>
-        </VStack>
+        {children}
       </HStack>
     </HStack>
   </Container>
 );
-
-export default User;
