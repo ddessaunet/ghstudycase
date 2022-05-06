@@ -9,3 +9,11 @@ export interface Post {
   publishDate: Date;
   owner: User;
 }
+
+export interface Comment {
+  id: string;
+  message: string;
+  owner: User;
+  post: string;
+  publishDate: Date;
+}

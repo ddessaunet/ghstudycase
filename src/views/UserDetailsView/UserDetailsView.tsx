@@ -3,13 +3,15 @@ import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
 import { User } from 'components/User';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAxios } from 'utils/useAxios';
-import { getUserProfile } from 'services/UserService';
+import { getUserProfilePayload } from 'services/UserService';
 import { UserProfile } from 'services/UserService.d';
 
 export const UserDetailsView = () => {
   const navigate = useNavigate();
   const { userid = '' } = useParams();
-  const { response, loading, error }: any = useAxios(getUserProfile(userid));
+  const { response, loading, error }: any = useAxios(
+    getUserProfilePayload(userid),
+  );
   const [user, setUser] = useState<UserProfile>();
 
   const handleBack = () => {

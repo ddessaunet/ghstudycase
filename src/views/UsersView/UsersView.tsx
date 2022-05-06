@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container, Flex } from '@chakra-ui/react';
-import { getUsers } from 'services/UserService';
+import { getUsersPayload } from 'services/UserService';
 import { User } from 'components/User';
 import { Paginated } from 'components/Paginated';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ export const UsersView = () => {
       <Paginated
         elements={users}
         setElements={setUsers}
-        request={(page: number) => getUsers(5, page)}
+        request={(page: number) => getUsersPayload(5, page)}
       >
         <UsersList users={users} />
       </Paginated>
