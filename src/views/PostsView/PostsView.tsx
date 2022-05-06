@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
+import { Button, Container, Flex, Text } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getPostsByUserPayload } from 'services/UserService';
 import { getCommentsByPost } from 'services/PostService';
@@ -15,7 +15,6 @@ export const PostsView = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [user, setUser] = useState<IUser>({} as IUser);
   const [comments, setComments] = useState<IComment[]>([]);
-  const [showComments, setShowComments] = useState(false);
 
   const getLastComments = async (post: IPost) => {
     const postComments = await getCommentsByPost({
@@ -29,9 +28,7 @@ export const PostsView = () => {
         (comment: IComment) => !comments.find(c => c.id === comment.id),
       ),
     ];
-    setShowComments(true);
     setComments(commentsList);
-    console.log(commentsList);
   };
 
   const LastComments = ({ post }: any) => {
@@ -40,11 +37,12 @@ export const PostsView = () => {
 
     return (
       <Container>
-        <Text>{}</Text>
-        {lastComments.map(comment => (
+        {lastComments.splice(0, 2).map(comment => (
           <Flex>
             <img src={comment.owner.picture} alt="" />
-            <Text alignSelf="center">{comment.message}</Text>
+            <Text alignSelf="center" m="10px">
+              {comment.message}
+            </Text>
           </Flex>
         ))}
       </Container>
@@ -55,7 +53,10 @@ export const PostsView = () => {
     <Flex flexDirection="column">
       {posts.map((post: any) => (
         <Flex key={post.id} m="10px">
-          <Post {...post}>
+          <Post
+            {...post}
+            action={(tagname: string) => navigate(`/${tagname}/tag`)}
+          >
             <Button marginY="10px" onClick={() => getLastComments(post)}>
               Show comments
             </Button>

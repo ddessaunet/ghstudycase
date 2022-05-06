@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Img, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Img, Link, Text } from '@chakra-ui/react';
 import React from 'react';
 import { Props } from './Post.d';
 import { ReactComponent as LikeIcon } from 'assets/like.svg';
@@ -9,6 +9,7 @@ export const Post = ({
   tags,
   text,
   publishDate,
+  action,
   children,
 }: Props) => (
   <Container
@@ -36,6 +37,21 @@ export const Post = ({
             <Box>
               <Text fontWeight="800">{text}</Text>
             </Box>
+            <Flex>
+              {tags.map((tag: string) => (
+                <Link
+                  fontWeight="bold"
+                  m="10px"
+                  p="5px"
+                  backgroundColor="blue.300"
+                  textColor="white"
+                  borderRadius="8px"
+                  onClick={() => action(tag)}
+                >
+                  {tag}
+                </Link>
+              ))}
+            </Flex>
           </Flex>
           <Box marginLeft="auto">
             <LikeIcon width="20px" />

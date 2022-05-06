@@ -7,5 +7,6 @@ export interface Props {
   tags: string[];
   text: string;
   publishDate: Date;
+  action: (tag) => void;
   children?: ReactNode;
 }

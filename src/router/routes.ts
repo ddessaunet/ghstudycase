@@ -12,3 +12,8 @@ export const POSTS = {
   key: 'posts',
   path: '/:userid/posts',
 };
+
+export const TAG = {
+  key: 'tag',
+  path: '/:tagname/tag',
+};
