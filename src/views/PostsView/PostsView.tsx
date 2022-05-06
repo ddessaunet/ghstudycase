@@ -15,6 +15,7 @@ export const PostsView = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
   const [user, setUser] = useState<IUser>({} as IUser);
   const [comments, setComments] = useState<IComment[]>([]);
+  const [hasComments, setHasComments] = useState<{ [key: string]: any }[]>([]);
 
   const getLastComments = async (post: IPost) => {
     const postComments = await getCommentsByPost({
@@ -35,37 +36,63 @@ export const PostsView = () => {
     const lastComments = comments.filter(comment => comment.post === post.id);
     if (!lastComments.length) return null;
 
-    return (
-      <Container>
-        {lastComments.splice(0, 2).map(comment => (
-          <Flex>
-            <img src={comment.owner.picture} alt="" />
-            <Text alignSelf="center" m="10px">
-              {comment.message}
-            </Text>
-          </Flex>
-        ))}
-      </Container>
-    );
+    const renderComments = () =>
+      lastComments.splice(0, 2).map(comment => (
+        <Flex>
+          <img src={comment.owner.picture} alt="" />
+          <Text alignSelf="center" m="10px">
+            {comment.message}
+          </Text>
+        </Flex>
+      ));
+
+    return <Container>{renderComments()}</Container>;
   };
 
-  const PostsList = ({ posts }: any) => (
-    <Flex flexDirection="column">
-      {posts.map((post: any) => (
-        <Flex key={post.id} m="10px">
-          <Post
-            {...post}
-            action={(tagname: string) => navigate(`/${tagname}/tag`)}
-          >
-            <Button marginY="10px" onClick={() => getLastComments(post)}>
-              Show comments
-            </Button>
-            <LastComments post={post} />
-          </Post>
-        </Flex>
-      ))}
-    </Flex>
-  );
+  const nav = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
+
+  const PostsList = ({ posts }: any) => {
+    const [loadingComments, setLoadingComments] = useState(false);
+
+    const getComments = async (post: IPost) => {
+      setLoadingComments(true);
+      await getLastComments(post);
+      setLoadingComments(false);
+    };
+
+    const getLabel = () => {
+      if (loadingComments) {
+        return 'Loading...';
+      } else {
+        return 'Show comments';
+      }
+    };
+
+    return (
+      <Flex flexDirection="column">
+        {posts.map((post: any) => (
+          <Flex key={post.id} m="10px">
+            <Post
+              {...post}
+              action={(tagname: string) => nav(`/${tagname}/tag`)}
+            >
+              <Button
+                marginY="10px"
+                onClick={() => getComments(post)}
+                disabled={loadingComments}
+              >
+                {getLabel()}
+              </Button>
+              <LastComments post={post} />
+            </Post>
+          </Flex>
+        ))}
+      </Flex>
+    );
+  };
 
   useEffect(() => {
     if (posts.length) {
@@ -76,7 +103,7 @@ export const PostsView = () => {
   return (
     <Container>
       <User {...user}>
-        <Button onClick={() => navigate('/')}>Return to users list</Button>
+        <Button onClick={() => nav('/')}>Return to users list</Button>
       </User>
       <Paginated
         page="Posts"

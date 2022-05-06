@@ -11,6 +11,11 @@ export const TagsView = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<IPost[]>([]);
 
+  const nav = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
+
   const PostsList = ({ posts }: any) => (
     <Flex flexDirection="column">
       {posts.map((post: any) => (
@@ -18,10 +23,7 @@ export const TagsView = () => {
           <Post {...post}>
             <Flex justifyContent="end">
               <Text marginX="10px">Owner:</Text>
-              <Link
-                onClick={() => navigate(`/${post.owner.id}`)}
-                fontWeight="bold"
-              >
+              <Link onClick={() => nav(`/${post.owner.id}`)} fontWeight="bold">
                 {post.owner.firstName} {post.owner.lastName}
               </Link>
             </Flex>
@@ -34,7 +36,7 @@ export const TagsView = () => {
   return (
     <Container>
       <Flex borderStyle="dashed">
-        <Button marginX="10px" onClick={() => navigate('/')}>
+        <Button marginX="10px" onClick={() => nav('/')}>
           Back to users list
         </Button>
         <Flex flexDirection="column" marginLeft="auto">
