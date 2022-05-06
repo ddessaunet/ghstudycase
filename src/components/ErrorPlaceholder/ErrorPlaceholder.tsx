@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from 'assets/gh.png';
 import './styles.css';
+import { Props } from './ErrorPlaceholder.d';
 
-const ErrorPlaceholder = ({ children }: any) => {
+export const ErrorPlaceholder = ({ children }: Props) => {
   return (
     <div className="App">
       <div className="App-header">
@@ -12,5 +13,3 @@ const ErrorPlaceholder = ({ children }: any) => {
     </div>
   );
 };
-
-export default ErrorPlaceholder;
