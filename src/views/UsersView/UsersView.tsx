@@ -37,6 +37,7 @@ export const UsersView = () => {
   return (
     <Container width="100%">
       <Paginated
+        page="Users"
         elements={users}
         setElements={setUsers}
         request={(page: number) => getUsersPayload(5, page)}

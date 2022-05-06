@@ -41,13 +41,13 @@ export const TagsView = () => {
           <Text alignSelf="center">
             Current tag: <Tag fontWeight="bold">{tagname}</Tag>
           </Text>
-          <Text>Total: {}</Text>
         </Flex>
       </Flex>
       <Paginated
+        page="Tags"
         elements={posts}
         setElements={setPosts}
-        request={page => getPostsByTagPayload(tagname, 10, page)}
+        request={page => getPostsByTagPayload(tagname, 5, page)}
       >
         <PostsList posts={posts} />
       </Paginated>

@@ -79,9 +79,10 @@ export const PostsView = () => {
         <Button onClick={() => navigate('/')}>Return to users list</Button>
       </User>
       <Paginated
+        page="Posts"
         elements={posts}
         setElements={setPosts}
-        request={(page: number) => getPostsByUserPayload(userid, 10, page)}
+        request={(page: number) => getPostsByUserPayload(userid, 5, page)}
       >
         <PostsList posts={posts} />
       </Paginated>
