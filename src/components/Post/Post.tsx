@@ -65,5 +65,3 @@ export const Post = ({
     </Flex>
   </Container>
 );
-
-export default Post;

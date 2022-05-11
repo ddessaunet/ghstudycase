@@ -8,7 +8,7 @@ import { UnexpectedErrorView, NotFoundView } from 'views/ErrorsView/Loadable';
 import { UserDetailsView } from 'views/UserDetailsView/Loadable';
 import { TagsView } from 'views/TagsView';
 
-const SiteRouting = () => (
+export const Pages = () => (
   <>
     <BrowserRouter>
       <Box minH="100vh">
@@ -25,5 +25,3 @@ const SiteRouting = () => (
     </BrowserRouter>
   </>
 );
-
-export default SiteRouting;

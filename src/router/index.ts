@@ -1,1 +1,1 @@
-export { default as SiteRouting } from './SiteRouting';
+export { Pages } from './Pages';
