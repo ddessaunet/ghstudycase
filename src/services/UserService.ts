@@ -1,4 +1,5 @@
-import { AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
+import { User } from './UserService.d';
 
 export const getUsersPayload = (
   limit: number,
@@ -21,3 +22,25 @@ export const getPostsByUserPayload = (
   method: 'get',
   url: `/user/${userid}/post?limit=${limit}&page=${page}`,
 });
+
+const getUserId = (url: string | undefined) => {
+  return url?.split('/')[2] || '';
+};
+
+export const getPostsByUsers = async (users: User[]) => {
+  try {
+    const promises = users.map(user =>
+      axios.request(getPostsByUserPayload(user.id, 1, 0)),
+    );
+    const postsByUsers = await Promise.all(promises);
+    return postsByUsers.reduce(
+      (response: { [key: string]: number }, { config, data: postsByUser }) => {
+        response[getUserId(config.url)] = postsByUser.total;
+        return response;
+      },
+      {},
+    );
+  } catch (e) {
+  } finally {
+  }
+};

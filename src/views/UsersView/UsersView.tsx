@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Container, Flex } from '@chakra-ui/react';
-import { getUsersPayload } from 'services/UserService';
+import { Button, Container, Flex, Text } from '@chakra-ui/react';
+import { getUsersPayload, getPostsByUserPayload } from 'services/UserService';
 import { User } from 'components/User';
 import { Paginated } from 'components/Paginated';
 import { useNavigate } from 'react-router-dom';
@@ -19,14 +19,16 @@ export const UsersView = () => {
     <Flex flexDirection="column">
       {users.map((user: any) => (
         <Flex key={user.id} m="10px">
-          <User {...user}>
-            <Flex gap="1">
-              <Button onClick={() => nav(`/${user.id}`)}>
-                Show full profile
-              </Button>
-              <Button onClick={() => nav(`/${user.id}/posts`)}>
-                User posts
-              </Button>
+          <User {...user} request={() => getPostsByUserPayload(user.id, 1, 0)}>
+            <Flex flexDirection="column">
+              <Flex gap="1">
+                <Button onClick={() => nav(`/${user.id}`)}>
+                  Show full profile
+                </Button>
+                <Button onClick={() => nav(`/${user.id}/posts`)}>
+                  User posts
+                </Button>
+              </Flex>
             </Flex>
           </User>
         </Flex>

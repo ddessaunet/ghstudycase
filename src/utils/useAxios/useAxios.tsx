@@ -22,6 +22,7 @@ export const useAxios = (params: AxiosRequestConfig) => {
   };
 
   useEffect(() => {
+    if (!url || !method) return;
     fetchData();
   }, [method, url, headers]);
 
