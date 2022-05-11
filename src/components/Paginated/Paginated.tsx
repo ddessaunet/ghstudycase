@@ -11,11 +11,13 @@ export const Paginated = ({
   children,
 }: Props) => {
   const [pageNumber, setPageNumber] = useState(0);
+  const [maxPageNumber, setMaxPageNumber] = useState(0);
   const { response, loading }: any = useAxios(request(pageNumber));
 
   useEffect(() => {
     if (response) {
-      const { data } = response;
+      const { data, total, limit } = response;
+      setMaxPageNumber(Math.floor(+total / +limit));
       setElements(data);
     }
   }, [response, setElements]);
@@ -53,7 +55,9 @@ export const Paginated = ({
       <Button onClick={handleBack} disabled={pageNumber === 0}>
         Back
       </Button>
-      <Button onClick={handleNext}>Next</Button>
+      <Button onClick={handleNext} disabled={maxPageNumber === pageNumber}>
+        Next
+      </Button>
     </Flex>
   );
 

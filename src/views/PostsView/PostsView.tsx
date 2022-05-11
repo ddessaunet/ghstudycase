@@ -8,6 +8,7 @@ import { Post } from 'components/Post';
 import { User as IUser } from 'services/UserService.d';
 import { Post as IPost, Comment as IComment } from 'services/PostService.d';
 import { User } from 'components/User';
+import { Comment } from '../../components/Comment';
 
 export const PostsView = () => {
   const { userid = '' } = useParams();
@@ -37,14 +38,7 @@ export const PostsView = () => {
     if (!lastComments.length) return null;
 
     const renderComments = () =>
-      lastComments.splice(0, 2).map(comment => (
-        <Flex>
-          <img src={comment.owner.picture} alt="" />
-          <Text alignSelf="center" m="10px">
-            {comment.message}
-          </Text>
-        </Flex>
-      ));
+      lastComments.splice(0, 2).map(comment => <Comment {...comment} />);
 
     return <Container>{renderComments()}</Container>;
   };
