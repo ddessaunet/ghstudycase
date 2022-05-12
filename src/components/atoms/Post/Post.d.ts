@@ -1,5 +1,6 @@
-import { User } from '../../../services/UserService';
+import { User } from 'services/UserService';
 import { ReactNode } from 'react';
+import { AxiosRequestConfig } from 'axios';
 
 export interface Props {
   image: string;
@@ -8,5 +9,6 @@ export interface Props {
   text: string;
   publishDate: string;
   action: (tag) => void;
+  request?: () => AxiosRequestConfig;
   children?: ReactNode;
 }
