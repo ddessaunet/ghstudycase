@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, Spinner, Text } from '@chakra-ui/react';
 import { User } from 'components/atoms/User';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAxios } from 'utils/useAxios';
@@ -29,8 +29,9 @@ export const UserDetailsView = () => {
   const Details = () => {
     if (loading || !user) {
       return (
-        <Flex justifyContent="center" m="20px">
-          <Text>Loading...</Text>
+        <Flex justifyContent="center" m="20px" gap="1">
+          <Spinner />
+          <Text marginX="10px">Loading...</Text>
         </Flex>
       );
     }

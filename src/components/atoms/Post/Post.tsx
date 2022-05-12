@@ -40,6 +40,7 @@ export const Post = ({
             <Flex>
               {tags.map((tag: string) => (
                 <Link
+                  key={tag}
                   fontWeight="bold"
                   m="10px"
                   p="5px"

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Props } from './Paginated.d';
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Spinner, Text } from '@chakra-ui/react';
 import { useAxios } from 'utils/useAxios';
 
 export const Paginated = ({
@@ -42,7 +42,8 @@ export const Paginated = ({
     if (loading || !elements.length) {
       return (
         <Flex justifyContent="center" m="20px">
-          <Text>Loading...</Text>
+          <Spinner />
+          <Text marginX="10px">Loading...</Text>
         </Flex>
       );
     }
