@@ -17,7 +17,9 @@ export const Paginated = ({
   useEffect(() => {
     if (response) {
       const { data, total, limit } = response;
-      setMaxPageNumber(Math.floor(+total / +limit));
+      const max =
+        total % limit ? Math.floor(+total / +limit) : +total / +limit - 1;
+      setMaxPageNumber(max);
       setElements(data);
     }
   }, [response, setElements]);
@@ -53,10 +55,14 @@ export const Paginated = ({
 
   const NavigationButtons = () => (
     <Flex justifyContent="center">
-      <Button onClick={handleBack} disabled={pageNumber === 0}>
+      <Button onClick={handleBack} disabled={pageNumber === 0} marginX="5px">
         Back
       </Button>
-      <Button onClick={handleNext} disabled={maxPageNumber === pageNumber}>
+      <Button
+        onClick={handleNext}
+        disabled={maxPageNumber === pageNumber}
+        marginX="5px"
+      >
         Next
       </Button>
     </Flex>
