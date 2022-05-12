@@ -22,8 +22,8 @@ export const User = ({
 
   return (
     <Container border="solid" borderWidth="5px" padding="10px">
-      <Flex>
-        <Flex marginX="10px">
+      <Flex flexDirection={['column', 'row']}>
+        <Flex marginX="10px" alignSelf={['center']}>
           <Img src={picture} alt="" w="150px" />
         </Flex>
         <Flex marginX="1px" flexDirection="column">

@@ -16,7 +16,7 @@ export const UsersList = ({ users }: any) => {
         <Flex key={user.id} m="10px">
           <User {...user} request={() => getPostsByUserPayload(user.id, 1, 0)}>
             <Flex flexDirection="column">
-              <Flex gap="1">
+              <Flex flexDirection={['column', 'row']} gap="1">
                 <Button onClick={() => nav(`/${user.id}`)}>
                   Show full profile
                 </Button>

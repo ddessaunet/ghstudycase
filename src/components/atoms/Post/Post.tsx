@@ -31,8 +31,8 @@ export const Post = ({
       borderStyle="groove"
     >
       <Flex flexDirection="column">
-        <Flex>
-          <Box marginX="10px">
+        <Flex flexDirection={['column', 'row']}>
+          <Box marginX="10px" alignSelf="center">
             <Img src={image} alt="" w="150px" />
           </Box>
           <Flex marginX="1px" w="100%">
@@ -49,7 +49,7 @@ export const Post = ({
               <Box>
                 <Text fontWeight="800">{text}</Text>
               </Box>
-              <Flex>
+              <Flex flexWrap="wrap">
                 {tags.map((tag: string) => (
                   <Link
                     key={tag}
@@ -59,7 +59,7 @@ export const Post = ({
                     backgroundColor="blue.300"
                     textColor="white"
                     borderRadius="8px"
-                    onClick={() => action(tag)}
+                    onClick={() => action(`/${tag}/tag`)}
                   >
                     {tag}
                   </Link>

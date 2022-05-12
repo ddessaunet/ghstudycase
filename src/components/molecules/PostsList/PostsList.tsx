@@ -20,7 +20,7 @@ export const PostsList = ({ posts }: Props) => {
         <Flex key={post.id} m="10px">
           <Post
             {...post}
-            action={(tagname: string) => nav(`/${tagname}/tag`)}
+            action={nav}
             request={() => getCommentsByPostPayload(post.id, 1, 0)}
           >
             <LastComments post={post} />

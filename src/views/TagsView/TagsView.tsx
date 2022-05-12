@@ -20,7 +20,7 @@ export const TagsView = () => {
     <Flex flexDirection="column">
       {posts.map((post: any) => (
         <Flex key={post.id} m="10px">
-          <Post {...post}>
+          <Post {...post} action={nav}>
             <Flex justifyContent="end">
               <Text marginX="10px">Owner:</Text>
               <Link onClick={() => nav(`/${post.owner.id}`)} fontWeight="bold">
@@ -35,11 +35,11 @@ export const TagsView = () => {
 
   return (
     <Container>
-      <Flex borderStyle="dashed">
+      <Flex borderStyle="dashed" flexDirection={['column', 'row']}>
         <Button marginX="10px" onClick={() => nav('/')}>
           Back to users list
         </Button>
-        <Flex flexDirection="column" marginLeft="auto">
+        <Flex flexDirection="column" m={['10px 0 0 0', ' 0 0 0 auto']}>
           <Text alignSelf="center">
             Current tag: <Tag fontWeight="bold">{tagname}</Tag>
           </Text>
