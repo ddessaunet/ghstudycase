@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Flex, Link, Tag, Text } from '@chakra-ui/react';
-import { Paginated } from 'components/Paginated';
-import { Post } from 'components/Post';
+import { Paginated } from 'components/molecules/Paginated';
+import { Post } from 'components/atoms/Post';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Post as IPost } from 'services/PostService.d';
 import { getPostsByTagPayload } from 'services/TagService';

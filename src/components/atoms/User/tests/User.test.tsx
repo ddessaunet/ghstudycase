@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { User } from 'components/User';
-import { UserProps } from 'components/User';
+import { User, UserProps } from 'components/atoms/User';
 
 describe('<User />', () => {
   const props = {

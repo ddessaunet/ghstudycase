@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { ErrorPlaceholder } from 'components/ErrorPlaceholder';
+import { ErrorPlaceholder } from 'components/atoms/ErrorPlaceholder';
 
 export const UnexpectedErrorView = () => (
   <ErrorPlaceholder>

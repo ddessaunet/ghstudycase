@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Flex, Text } from '@chakra-ui/react';
+import { Button, Container, Flex } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getPostsByUserPayload } from 'services/UserService';
 import { getCommentsByPost } from 'services/PostService';
-import { Paginated } from 'components/Paginated';
-import { Post } from 'components/Post';
+import { Paginated } from 'components/molecules/Paginated';
+import { Post } from 'components/atoms/Post';
 import { User as IUser } from 'services/UserService.d';
 import { Post as IPost, Comment as IComment } from 'services/PostService.d';
-import { User } from 'components/User';
-import { Comment } from '../../components/Comment';
+import { User } from 'components/atoms/User';
+import { Comment } from 'components/atoms/Comment';
 
 export const PostsView = () => {
   const { userid = '' } = useParams();

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ErrorPlaceholder } from 'components/ErrorPlaceholder';
-import { ErrorPlaceholderProps } from 'components/ErrorPlaceholder';
+import { ErrorPlaceholder } from 'components/atoms/ErrorPlaceholder/index';
+import { ErrorPlaceholderProps } from 'components/atoms/ErrorPlaceholder/index';
 
 describe('<ErrorPlaceholder />', () => {
   const props = {};

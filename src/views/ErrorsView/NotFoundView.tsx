@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
-import { ErrorPlaceholder } from 'components/ErrorPlaceholder';
+import { ErrorPlaceholder } from 'components/atoms/ErrorPlaceholder';
 import { useNavigate } from 'react-router-dom';
 
 export const NotFoundView = () => {

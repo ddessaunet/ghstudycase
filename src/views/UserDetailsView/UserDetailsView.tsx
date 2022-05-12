@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Container, Flex, Text } from '@chakra-ui/react';
-import { User } from 'components/User';
+import { User } from 'components/atoms/User';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAxios } from 'utils/useAxios';
 import { getUserProfilePayload } from 'services/UserService';

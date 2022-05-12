@@ -1,4 +1,4 @@
-import { User } from 'services/UserService.d';
+import { User } from '../../../services/UserService';
 import { ReactNode } from 'react';
 
 export interface Props {
