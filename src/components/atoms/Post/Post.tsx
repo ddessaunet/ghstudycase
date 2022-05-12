@@ -14,7 +14,7 @@ export const Post = ({
   request,
   children,
 }: Props) => {
-  const [totalComments, setTotalComments] = useState(0);
+  const [totalComments, setTotalComments] = useState('Loading...');
   const { response }: any = useAxios(request ? request() : {});
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export const Post = ({
             </Box>
           </Flex>
         </Flex>
-        {totalComments ? children : null}
+        {children}
       </Flex>
     </Container>
   );

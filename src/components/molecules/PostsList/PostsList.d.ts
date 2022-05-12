@@ -1,5 +1,5 @@
 import { Post as IPost } from 'services/PostService.d';
 
 export interface Props {
-  posts: Post[];
+  posts: IPost[];
 }

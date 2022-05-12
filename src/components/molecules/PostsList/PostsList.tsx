@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Post } from 'components/atoms/Post';
 import { LastComments } from 'components/molecules/LastComments';
 import { getCommentsByPostPayload } from 'services/PostService';
+import { Props } from './PostsList.d';
 
-export const PostsList = ({ posts }: any) => {
+export const PostsList = ({ posts }: Props) => {
   const navigate = useNavigate();
 
   const nav = (path: string) => {

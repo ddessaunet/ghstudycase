@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Flex } from '@chakra-ui/react';
+import { Button, Container } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getPostsByUserPayload } from 'services/UserService';
 import { Paginated } from 'components/molecules/Paginated';

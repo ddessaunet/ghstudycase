@@ -16,7 +16,7 @@ export const TagsView = () => {
     navigate(path);
   };
 
-  const PostsList = ({ posts }: any) => (
+  const List = ({ posts }: any) => (
     <Flex flexDirection="column">
       {posts.map((post: any) => (
         <Flex key={post.id} m="10px">
@@ -51,7 +51,7 @@ export const TagsView = () => {
         setElements={setPosts}
         request={page => getPostsByTagPayload(tagname, 5, page)}
       >
-        <PostsList posts={posts} />
+        <List posts={posts} />
       </Paginated>
     </Container>
   );
