@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPostsByUserPayload } from './UserService';
+import { getPostsByUserPayload } from '../UserService';
 
 describe('UserService test', () => {
   const limit = 5;

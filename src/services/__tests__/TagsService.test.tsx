@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPostsByTagPayload } from './TagService';
+import { getPostsByTagPayload } from '../TagService';
 
 describe('TagsService test', () => {
   it('should have a method getPostsByTagPayload and return a payload', () => {

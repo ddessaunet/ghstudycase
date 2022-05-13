@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostsList /> should render and match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
+    <div
+      id="chakra-toast-portal"
+    >
+      <ul
+        id="chakra-toast-manager-top"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-top-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-top-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+    <div>
+      <div
+        class="css-j7qwjs"
+      >
+        <div
+          class="css-cocn0m"
+        >
+          <div
+            class="chakra-container css-140un8w"
+          >
+            <div
+              class="css-j7qwjs"
+            >
+              <div
+                class="css-obc5ee"
+              >
+                <div
+                  class="css-1fd76z5"
+                >
+                  <img
+                    alt=""
+                    class="chakra-image css-1nbic85"
+                    src="https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg"
+                  />
+                </div>
+                <div
+                  class="css-1dglqzs"
+                >
+                  <div
+                    class="css-1o7kqr2"
+                  >
+                    <div
+                      class="css-0"
+                    >
+                      <p
+                        class="chakra-text css-ty7r4z"
+                      >
+                        2020-05-24T14:53:17.598Z
+                      </p>
+                    </div>
+                    <div
+                      class="css-0"
+                    >
+                      <p
+                        class="chakra-text css-ty7r4z"
+                      >
+                        adult Labrador retriever
+                      </p>
+                    </div>
+                    <div
+                      class="css-2imjyh"
+                    >
+                      <a
+                        class="chakra-link css-16aod2b"
+                      >
+                        animal
+                      </a>
+                      <a
+                        class="chakra-link css-16aod2b"
+                      >
+                        dog
+                      </a>
+                      <a
+                        class="chakra-link css-16aod2b"
+                      >
+                        golden retriever
+                      </a>
+                    </div>
+                    <p
+                      class="chakra-text css-1tx38fa"
+                    >
+                      Comments: 
+                      Loading...
+                    </p>
+                  </div>
+                  <div
+                    class="css-zdpt2t"
+                  >
+                    <svg
+                      width="20px"
+                    >
+                      like.svg
+                    </svg>
+                    <p
+                      class="chakra-text css-1usi692"
+                    >
+                      43
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="css-j7qwjs"
+              >
+                <button
+                  class="chakra-button css-1bi4nmq"
+                  type="button"
+                >
+                  Show comments
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-j7qwjs"
+    >
+      <div
+        class="css-cocn0m"
+      >
+        <div
+          class="chakra-container css-140un8w"
+        >
+          <div
+            class="css-j7qwjs"
+          >
+            <div
+              class="css-obc5ee"
+            >
+              <div
+                class="css-1fd76z5"
+              >
+                <img
+                  alt=""
+                  class="chakra-image css-1nbic85"
+                  src="https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg"
+                />
+              </div>
+              <div
+                class="css-1dglqzs"
+              >
+                <div
+                  class="css-1o7kqr2"
+                >
+                  <div
+                    class="css-0"
+                  >
+                    <p
+                      class="chakra-text css-ty7r4z"
+                    >
+                      2020-05-24T14:53:17.598Z
+                    </p>
+                  </div>
+                  <div
+                    class="css-0"
+                  >
+                    <p
+                      class="chakra-text css-ty7r4z"
+                    >
+                      adult Labrador retriever
+                    </p>
+                  </div>
+                  <div
+                    class="css-2imjyh"
+                  >
+                    <a
+                      class="chakra-link css-16aod2b"
+                    >
+                      animal
+                    </a>
+                    <a
+                      class="chakra-link css-16aod2b"
+                    >
+                      dog
+                    </a>
+                    <a
+                      class="chakra-link css-16aod2b"
+                    >
+                      golden retriever
+                    </a>
+                  </div>
+                  <p
+                    class="chakra-text css-1tx38fa"
+                  >
+                    Comments: 
+                    Loading...
+                  </p>
+                </div>
+                <div
+                  class="css-zdpt2t"
+                >
+                  <svg
+                    width="20px"
+                  >
+                    like.svg
+                  </svg>
+                  <p
+                    class="chakra-text css-1usi692"
+                  >
+                    43
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-j7qwjs"
+            >
+              <button
+                class="chakra-button css-1bi4nmq"
+                type="button"
+              >
+                Show comments
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

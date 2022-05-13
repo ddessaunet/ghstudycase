@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Post, PostProps } from 'components/atoms/Post';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Post, PostProps } from 'components/atoms/Post';
 
 describe('<Post />', () => {
   const props = {

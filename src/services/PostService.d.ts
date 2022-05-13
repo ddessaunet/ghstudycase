@@ -3,10 +3,10 @@ import { User } from './UserService.d';
 export interface Post {
   id: string;
   image: string;
-  likes: 77;
+  likes: number;
   tags: string[];
   text: string;
-  publishDate: Date;
+  publishDate: string;
   owner: User;
 }
 
