@@ -3,7 +3,7 @@
 <table>
 <tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Available</td></tr>
 <tr><td><strong>Preview URL:</strong></td><td>
-<a href='https://studycase-ui.dariodessaunet.dev'>https://getharley.dariodessaunet.dev</a>
+<a href='https://studycase-ui.dariodessaunet.dev'>https://studycase-ui.dariodessaunet.dev</a>
 </td></tr>
 </table>
 
