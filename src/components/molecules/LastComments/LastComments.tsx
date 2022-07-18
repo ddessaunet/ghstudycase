@@ -29,7 +29,7 @@ export const LastComments = ({ post }: Props) => {
     if (loadingComments) {
       return <Spinner />;
     } else {
-      return 'Show comments';
+      return 'Show last 2 comments';
     }
   };
 
