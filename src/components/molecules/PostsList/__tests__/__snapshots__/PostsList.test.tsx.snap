@@ -132,7 +132,7 @@ Object {
                   class="chakra-button css-1bi4nmq"
                   type="button"
                 >
-                  Show comments
+                  Show last 2 comments
                 </button>
               </div>
             </div>
@@ -239,7 +239,7 @@ Object {
                 class="chakra-button css-1bi4nmq"
                 type="button"
               >
-                Show comments
+                Show last 2 comments
               </button>
             </div>
           </div>
